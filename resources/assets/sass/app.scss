@@ -1,8 +1,52 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Kumar+One);
-
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
 // Variables
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// custom css
+body {
+  background-color: $bg;
+  color: $gray-black;
+  font-family: 'Droid Serif', serif;
+  font-size: 14px;
+}
+
+.article {
+	text-align: justify;
+	background: #ddd;
+}
+
+.head {
+  padding-bottom: 15px;
+  min-height: 170px;
+}
+
+.brand {
+  font-family: 'Arial', serif;
+  font-size: 68px;
+  margin-bottom: 0px;
+}
+
+.info-bar {
+  border-top: 2px solid $gray-black;
+  border-bottom: 2px solid $gray-black;
+  padding: 2px 0;
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+@include media-breakpoint-up(sm) {
+	.border-right-sm {
+		border-right: 1px solid $gray-black;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.border-right-md {
+		border-right: 1px solid $gray-black;
+	}
+}
