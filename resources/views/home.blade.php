@@ -30,31 +30,31 @@
           <div class="article article--main"></div>
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-between border-right-md first-column">
-          <div class="article"></div>
-          <div class="article"></div>
-          <div class="article"></div>
-          <div class="article"></div>
+          <div class="article columnize"></div>
+          <div class="article article--longer columnize"></div>
+          <div class="article columnize"></div>
+          <div class="article columnize"></div>
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-between second-column">
-          <div class="article"></div>
-          <div class="article"></div>
-          <div class="article"></div>
-          <div class="article"></div>
+          <div class="article columnize"></div>
+          <div class="article columnize"></div>
+          <div class="article columnize"></div>
+          <div class="article columnize"></div>
         </div>
       </div>
     </div> <!-- .left-section -->
     <div class="col-md-3 col-sm-5 d-flex flex-column justify-content-between border-right-md third-column">
-      <div class="article"></div>      
-      <div class="article"></div>
-      <div class="article"></div>
-      <div class="article"></div>
+      <div class="article columnize"></div>      
+      <div class="article columnize"></div>
+      <div class="article columnize"></div>
+      <div class="article columnize"></div>
     </div>
     <div class="col-md-3 d-flex flex-column justify-content-between fourth-column">
-      <div class="article"></div>
-      <div class="article"></div>
-      <div class="article"></div>
-      <div class="article"></div>
-      <div class="article"></div>
+      <div class="article columnize"></div>
+      <div class="article columnize"></div>
+      <div class="article article--longer columnize"></div>
+      <div class="article columnize"></div>
+      <div class="article columnize"></div>
     </div>
   </div>
 
@@ -66,9 +66,9 @@
   crossorigin="anonymous"></script>
 <script>
 	$(function() {
-		$('.article').html('<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>');
+		$('.article').html('<p>Lorem bla hf fadsk afdkjf adkja fadkj fadsklj fdaisf fadskj aidfoi fadlskj fadjf ;adjfajf; dfkjasljf lf. fasdf-fah. LipsumLorem ipsumLorem ipsu mLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>');
 
-		$('.article--main, .article--longer').append('<p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla blafadskl jfaslfjdl aksdjflask blafadskljf aslfjdlak sdjflaskblaf adskljf aslfjdlak sdjflas kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kljfaslfjdl aksd jflask</p>');
+		$('.article--main, .article--longer').append('<p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla blafadskl jfaslfjdl aksdjflask blafad skljf aslfjdlak sdjfla skblaf adskljf aslfjdlak sdjflas kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kljfaslfjdl aksd jflask</p>');
 	})
 </script>
 

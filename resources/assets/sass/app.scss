@@ -17,6 +17,7 @@ body {
 .article {
 	text-align: justify;
 	background: #ddd;
+  margin: 3px;
 }
 
 .head {
@@ -37,6 +38,11 @@ body {
   margin: 0;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+
+.columnize {
+  column-count: 3;
+  column-width: 150px;
 }
 
 @include media-breakpoint-up(sm) {
