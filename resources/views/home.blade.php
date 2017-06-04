@@ -24,18 +24,18 @@
 </div> <!-- .info-bar -->
 
 <div class="row articles">
-    <div class="col-md-6 col-sm-7 left-section border-right-sm">
+    <div class="col-md-6 col-sm-12 left-section border-right-md">
       <div class="row height-100">
         <div class="col-sm-12">
           <div class="article article--main"></div>
         </div>
-        <div class="col-md-6 d-flex flex-column justify-content-between border-right-md first-column">
+        <div class="col-sm-6 d-flex flex-column justify-content-between border-right-sm first-column">
           <div class="article"></div>
-          <div class="article"></div>
-          <div class="article"></div>
+          <div class="article article--longer"></div>
+          <div class="article article--longer"></div>
           <div class="article"></div>
         </div>
-        <div class="col-md-6 d-flex flex-column justify-content-between second-column">
+        <div class="col-sm-6 d-flex flex-column justify-content-between second-column">
           <div class="article"></div>
           <div class="article"></div>
           <div class="article"></div>
@@ -43,13 +43,13 @@
         </div>
       </div>
     </div> <!-- .left-section -->
-    <div class="col-md-3 col-sm-5 d-flex flex-column justify-content-between border-right-md third-column">
+    <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-between border-right-sm third-column">
       <div class="article"></div>      
       <div class="article"></div>
       <div class="article"></div>
       <div class="article"></div>
     </div>
-    <div class="col-md-3 d-flex flex-column justify-content-between fourth-column">
+    <div class="col-md-3 col-sm-6 d-flex flex-column justify-content-between fourth-column">
       <div class="article"></div>
       <div class="article"></div>
       <div class="article"></div>
