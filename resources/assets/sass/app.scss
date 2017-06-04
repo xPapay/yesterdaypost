@@ -14,10 +14,45 @@ body {
   font-size: 14px;
 }
 
+.forecast,
+.advertisement {
+  font-size: 12px;
+  border: 1px solid $gray-black;
+  padding: 8px;
+}
+
 .article {
 	text-align: justify;
-	background: #ddd;
-  margin: 3px;
+}
+
+.article__headline {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.article__perex {
+  margin-top: 15px;
+}
+
+.article__author {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.article__author::before {
+  content: 'By ';
+  text-transform: capitalize;
+}
+
+.article__body {
+  margin-top: 15px;
+}
+
+.article__place {
+  float: left;
+  text-transform: uppercase;
 }
 
 .head {
@@ -42,7 +77,18 @@ body {
 
 .columnize {
   column-count: 3;
-  column-width: 150px;
+  column-width: 180px;
+}
+
+.separator {
+  box-shadow: 0 41px 0 -40px $gray-black;
+  padding-bottom: 10px;
+}
+
+.full-width-separator {
+  box-shadow: 0 6px 0 -5px $gray-black;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 @include media-breakpoint-up(sm) {

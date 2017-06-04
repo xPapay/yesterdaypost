@@ -3,16 +3,20 @@
 @section('content')
 
 <div class="row head">
-	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center forecast">
-		Weatherforcast for the next 24 hours: Plenty of Sunshine
-		Wind: 7km/h SSE; Ther: 21°C; Hum: 82%
-	</div> <!-- .forecast -->
+	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
+		<div class="forecast">
+			Weatherforcast for the next 24 hours: Plenty of Sunshine
+			Wind: 7km/h SSE; Ther: 21°C; Hum: 82%
+		</div>
+	</div>
 	<div class="col-md-8 col-sm-12 d-flex justify-content-center align-items-end">
 		<h1 class="text-uppercase text-center brand">Yesterday Post</h1>
 	</div>
-	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center advertisement">
-		A super awesome vintage advertisement
-	</div> <!-- .advertisement -->
+	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
+		<div class="advertisement">
+			A super awesome vintage advertisement
+		</div>
+	</div>
 </div> <!-- .row .head -->
 
 <div class="row info-bar">
@@ -30,10 +34,29 @@
           <div class="article article--main"></div>
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-between border-right-md first-column">
-          <div class="article columnize"></div>
-          <div class="article article--longer columnize"></div>
-          <div class="article columnize"></div>
-          <div class="article columnize"></div>
+          <div class="article full-width-separator">
+          	<div class="article__headline separator"><h2>This is sample headline</h2></div>
+          	<div class="article__perex lead separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
+          	<div class="article__author">Mark Landler</div>
+          	<div class="article__body columnize">
+          		<span class="article__place">Washington, July 23. &mdash; </span>
+          		<p>There should come content. Content consists from several paragraphs. Paragraphs are blocks of text. Together thei create an article. This is the first one. These paragprahs should by columnized.</p>
+          		<p>By columnizing paragraphs I mean separating them into columns if possible. Each column should be at least 180px wide. The maximum count of columns is set to 3.</p>
+          		<p>This article consist of 3 paragraphs</p>
+          	</div>
+          </div> <!-- .article -->
+          <div class="article">
+          	<div class="article__headline separator"><h2>This is sample headline</h2></div>
+          	<div class="article__perex lead separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
+          	<div class="article__author">Mark Landler</div>
+          	<div class="article__body columnize">
+          		<span class="article__place">Washington, July 23. &mdash; </span>
+          		<p>There should come content. Content consists from several paragraphs. Paragraphs are blocks of text. Together thei create an article. This is the first one. These paragprahs should by columnized.</p>
+          		<p>By columnizing paragraphs I mean separating them into columns if possible. Each column should be at least 180px wide. The maximum count of columns is set to 3.</p>
+          		<p>This article consist of 3 paragraphs</p>
+          	</div>
+          </div> <!-- .article -->
+          
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-between second-column">
           <div class="article columnize"></div>
@@ -60,7 +83,7 @@
 
 <!-- temporary script for filling content, delete after development -->
 <!-- TODO: delete these scripts after initial development -->
-<script
+<!-- <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
@@ -70,7 +93,7 @@
 
 		$('.article--main, .article--longer').append('<p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla blafadskl jfaslfjdl aksdjflask blafad skljf aslfjdlak sdjfla skblaf adskljf aslfjdlak sdjflas kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kljfaslfjdl aksd jflask</p>');
 	})
-</script>
+</script> -->
 
 @endsection
 
