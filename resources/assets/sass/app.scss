@@ -1,5 +1,5 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700|UnifrakturMaguntia);
 // Variables
 @import "variables";
 
@@ -71,8 +71,8 @@ body {
 }
 
 .brand {
-  font-family: 'Arial', serif;
-  font-size: 68px;
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 76px;
   margin-bottom: 0px;
 }
 
@@ -126,4 +126,25 @@ body {
 	.border-right-md {
 		border-right: 1px solid $gray-black;
 	}
+}
+
+@include media-breakpoint-down(lg) {
+  .brand {
+    font-size: 70px;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .brand {
+    font-size: 42px;
+  }
+
+  .article--main .article__headline h2 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+  }
+
+  .info-bar {
+    font-size: 12px;
+  }
 }
