@@ -1,5 +1,5 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 // Variables
 @import "variables";
 
@@ -35,7 +35,9 @@ body {
 }
 
 .article--main .article__headline h2 {
-  font-size: 3rem;
+  font-size: 3.3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
 .article__perex {
