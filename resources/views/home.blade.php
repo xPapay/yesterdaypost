@@ -97,19 +97,14 @@
     </div>
   </div>
 
-<!-- temporary script for filling content, delete after development -->
-<!-- TODO: delete these scripts after initial development -->
-<!-- <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<script>
-	$(function() {
-		$('.article').html('<p>Lorem bla hf fadsk afdkjf adkja fadkj fadsklj fdaisf fadskj aidfoi fadlskj fadjf ;adjfajf; dfkjasljf lf. fasdf-fah. LipsumLorem ipsumLorem ipsu mLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>');
-
-		$('.article--main, .article--longer').append('<p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla bla</p><p>Extra lorem ipsum bla bla bla bla bla bla bla blafadskl jfaslfjdl aksdjflask blafad skljf aslfjdlak sdjfla skblaf adskljf aslfjdlak sdjflas kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kblafads kljfaslfjdl aksd jflask</p>');
-	})
-</script> -->
+  <footer class="footer row">
+  	<div class="col-sm-6 d-flex align-items-center">
+  		<div class="text-muted">Made with love and respect to the history by <a href="mailto:papay.lukas@gmail.com">Lukas Papay</a></div>
+  	</div>
+  	<div class="col-sm-6">
+  		<div class="text-muted text-right">Powered by <img src="/images/poweredby_nytimes_30a.png"/></div>
+  	</div>
+  </footer>
 
 @endsection
 
