@@ -41,12 +41,12 @@ body {
 }
 
 .article__perex {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .article__author {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 30px;
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -91,8 +91,19 @@ body {
 }
 
 .separator {
-  box-shadow: 0 43px 0 -42px $gray-black;
-  padding-bottom: 10px;
+  position: relative;
+}
+
+.separator::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: -20px;
+  top: auto;
+  width: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid $gray-black;
 }
 
 .full-width-separator {
