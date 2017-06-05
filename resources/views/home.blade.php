@@ -39,7 +39,7 @@
 				</figure>
 			</div>
           	<div class="article__headline separator"><h2>This is sample headline</h2></div>
-          	<div class="article__perex lead separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
+          	<div class="article__perex lead text-center separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
           	<div class="article__author">Mark Landler</div>
           	<div class="article__body columnize">
           		<span class="article__place">Washington, July 23. &mdash; </span>
