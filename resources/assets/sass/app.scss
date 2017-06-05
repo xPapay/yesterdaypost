@@ -25,9 +25,17 @@ body {
 	text-align: justify;
 }
 
+.article__image {
+  margin-bottom: 10px;
+}
+
 .article__headline {
   text-align: center;
   text-transform: uppercase;
+}
+
+.article--main .article__headline h2 {
+  font-size: 3rem;
 }
 
 .article__perex {
@@ -81,14 +89,18 @@ body {
 }
 
 .separator {
-  box-shadow: 0 41px 0 -40px $gray-black;
+  box-shadow: 0 43px 0 -42px $gray-black;
   padding-bottom: 10px;
 }
 
 .full-width-separator {
-  box-shadow: 0 6px 0 -5px $gray-black;
+  box-shadow: 0 1px 0 0 $gray-black;
   padding-bottom: 5px;
   margin-bottom: 20px;
+}
+
+.bw-filter {
+  filter: grayscale(100%);
 }
 
 @include media-breakpoint-up(sm) {
