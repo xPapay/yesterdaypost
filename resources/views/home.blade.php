@@ -102,7 +102,7 @@
   		<div class="text-muted">Made with love and respect to the history by <a href="mailto:papay.lukas@gmail.com">Lukas Papay</a></div>
   	</div>
   	<div class="col-sm-6">
-  		<div class="text-muted text-right">Powered by <img src="/images/poweredby_nytimes_30a.png"/></div>
+  		<div class="text-muted text-right powered-by">Powered by <div class="ny-times-logo"></div></div>
   	</div>
   </footer>
 
