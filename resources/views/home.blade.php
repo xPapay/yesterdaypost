@@ -10,7 +10,9 @@
 		</div>
 	</div>
 	<div class="col-md-8 col-sm-12 d-flex justify-content-center align-items-end">
-    <div class="logo"></div>
+    <div class="logo">
+      @include('partials.logo')
+    </div>
 	</div>
 	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
 		<div class="advertisement">

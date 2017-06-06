@@ -17,10 +17,11 @@ body {
 .logo {
   width: 100%;
   height: 100%;
-  background-image: url(../images/logo.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.logo svg{
+  width: 100%;
+  height: 100%;
 }
 
 .forecast,
@@ -77,12 +78,6 @@ body {
 .head {
   padding-bottom: 15px;
   min-height: 170px;
-}
-
-.brand {
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 76px;
-  margin-bottom: 0px;
 }
 
 .info-bar {
@@ -155,17 +150,7 @@ body {
 	}
 }
 
-@include media-breakpoint-down(lg) {
-  .brand {
-    font-size: 70px;
-  }
-}
-
 @include media-breakpoint-down(xs) {
-  .brand {
-    font-size: 42px;
-  }
-
   .article--main .article__headline h2 {
     font-size: 2.3rem;
     letter-spacing: 2px;
