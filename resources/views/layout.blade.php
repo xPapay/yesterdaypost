@@ -14,6 +14,7 @@
 
     <div class="container-fluid">
     	@yield('content')
+    	@include('partials.footer')
 	</div>
 
 </body>
