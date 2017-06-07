@@ -101,7 +101,7 @@
 
   <footer class="footer row">
   	<div class="col-sm-6 d-flex align-items-center">
-  		<div class="text-muted">Made with love and respect to the history by <a href="mailto:papay.lukas@gmail.com">Lukas Papay</a></div>
+  		<div class="text-muted">Made with love and respect to the history by <a href="mailto:papay.lukas@gmail.com">Lukas Papay</a> &copy; 2017 YesterdayPost.com</div>
   	</div>
   	<div class="col-sm-6">
   		<div class="text-muted text-right powered-by">Powered by <div class="ny-times-logo"></div></div>
