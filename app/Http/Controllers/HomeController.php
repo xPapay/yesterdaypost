@@ -23,8 +23,7 @@ class HomeController extends Controller
     						})
     						->orderBy('print_page')
     						->get();
-
-    	$columns = $articles->split(4);
+    	$columns = $articles->columnize(4);
     	$mainArticle = $columns[0]->shift();
     	return view('home', compact('date', 'columns', 'mainArticle'));
     }
