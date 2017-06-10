@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('trim_dot', function ($expression) {
-            return "<?php echo preg_replace('/[^.](\.{1})$/', '', $expression); ?>";
+            return "<?php echo preg_replace('/([^.])(\.{1})$/', '\\1', $expression); ?>";
         });
     }
 
