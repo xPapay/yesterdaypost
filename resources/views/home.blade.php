@@ -24,7 +24,7 @@
 <div class="row info-bar">
 	<div class="col-sm-12">
 		<div class="text-center text-uppercase">
-			New York, Ny - THURSDAY AUGUST 30, 1978
+			New York, Ny - {{ $date->format('l F j, Y') }}
 		</div>
 	</div>
 </div> <!-- .info-bar -->
@@ -40,62 +40,68 @@
 							<figcaption class="figure-caption text-left">A caption for the above image.</figcaption>
 						</figure>
 					</div>
-					<div class="article__headline separator"><h2>This is sample headline</h2></div>
-					<div class="article__perex lead text-center separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
-					<div class="article__author">Mark Landler</div>
-					<div class="article__body columnize">
-						<span class="article__place">Washington, July 23. &mdash; </span>
-						<p>There should come content. Content consists from several paragraphs. Paragraphs are blocks of text. Together thei create an article. This is the first one. These paragprahs should by columnized.</p>
-						<p>By columnizing paragraphs I mean separating them into columns if possible. Each column should be at least 180px wide. The maximum count of columns is set to 3.</p>
-						<p>This article consist of 3 paragraphs</p>
+					<div class="article__headline separator">
+						<a href="{{ $mainArticle->url }}" target="_blank"><h2>@trim_dot($mainArticle->headline)</h2></a>
+					</div>
+					<div class="article__author">{{ $mainArticle->authors }}</div>
+					<div class="article__perex lead text-center">
+						{{ $mainArticle->perex }}
 					</div>
 				</div> <!-- .article -->
 			</div>
 			<div class="col-md-6 d-flex flex-column justify-content-between border-right-md first-column">
-				<div class="article full-width-separator">
-					<div class="article__headline separator"><h2>This is sample headline</h2></div>
-					<div class="article__perex lead separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
-					<div class="article__author">Mark Landler</div>
-					<div class="article__body columnize">
-						<span class="article__place">Washington, July 23. &mdash; </span>
-						<p>There should come content. Content consists from several paragraphs. Paragraphs are blocks of text. Together thei create an article. This is the first one. These paragprahs should by columnized.</p>
-						<p>By columnizing paragraphs I mean separating them into columns if possible. Each column should be at least 180px wide. The maximum count of columns is set to 3.</p>
-						<p>This article consist of 3 paragraphs</p>
-					</div>
-				</div> <!-- .article -->
-				<div class="article">
-					<div class="article__headline separator"><h2>This is sample headline</h2></div>
-					<div class="article__perex lead separator"><p>At this place should come perex. Perex should have 2-5 sentences and should engage the reader.</p></div>
-					<div class="article__author">Mark Landler</div>
-					<div class="article__body columnize">
-						<span class="article__place">Washington, July 23. &mdash; </span>
-						<p>There should come content. Content consists from several paragraphs. Paragraphs are blocks of text. Together thei create an article. This is the first one. These paragprahs should by columnized.</p>
-						<p>By columnizing paragraphs I mean separating them into columns if possible. Each column should be at least 180px wide. The maximum count of columns is set to 3.</p>
-						<p>This article consist of 3 paragraphs</p>
-					</div>
-				</div> <!-- .article -->
-				
+				@foreach ($columns[0] as $article)
+					<div class="article @if(!$loop->last) full-width-separator @endif">
+						<div class="article__headline separator">
+							<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
+						</div>
+						<div class="article__author">{{ $article->authors }}</div>
+						<div class="article__body columnize">
+							{{ $article->perex }}
+						</div>
+					</div> <!-- .article -->
+				@endforeach
 			</div>
 			<div class="col-md-6 d-flex flex-column justify-content-between second-column">
-				<div class="article columnize"></div>
-				<div class="article columnize"></div>
-				<div class="article columnize"></div>
-				<div class="article columnize"></div>
+				@foreach ($columns[1] as $article)
+					<div class="article @if(!$loop->last) full-width-separator @endif">
+						<div class="article__headline separator">
+							<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
+						</div>
+						<div class="article__author">{{ $article->authors }}</div>
+						<div class="article__body columnize">
+							{{ $article->perex }}
+						</div>
+					</div> <!-- .article -->
+				@endforeach
 			</div>
 		</div>
 	</div> <!-- .left-section -->
 	<div class="col-md-3 col-sm-5 d-flex flex-column justify-content-between border-right-md third-column">
-		<div class="article columnize"></div>      
-		<div class="article columnize"></div>
-		<div class="article columnize"></div>
-		<div class="article columnize"></div>
+		@foreach ($columns[2] as $article)
+			<div class="article @if(!$loop->last) full-width-separator @endif">
+				<div class="article__headline separator">
+					<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
+				</div>
+				<div class="article__author">{{ $article->authors }}</div>
+				<div class="article__body columnize">
+					{{ $article->perex }}
+				</div>
+			</div> <!-- .article -->
+		@endforeach
 	</div>
 	<div class="col-md-3 d-flex flex-column justify-content-between fourth-column">
-		<div class="article columnize"></div>
-		<div class="article columnize"></div>
-		<div class="article article--longer columnize"></div>
-		<div class="article columnize"></div>
-		<div class="article columnize"></div>
+		@foreach ($columns[3] as $article)
+			<div class="article @if(!$loop->last) full-width-separator @endif">
+				<div class="article__headline separator">
+					<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
+				</div>
+				<div class="article__author">{{ $article->authors }}</div>
+				<div class="article__body columnize">
+					{{ $article->perex }}
+				</div>
+			</div> <!-- .article -->
+		@endforeach
 	</div>
 </div>
 

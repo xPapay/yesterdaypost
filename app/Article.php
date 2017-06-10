@@ -10,4 +10,20 @@ class Article extends Model
     {
     	return $this->hasMany(Multimedia::class);
     }
+
+    public function getPerexAttribute()
+    {
+    	if ($this->lead_paragraph)
+    	{
+    		return $this->lead_paragraph;
+    	}
+    	elseif ($this->snippet) 
+    	{
+    		return $this->snippet;
+    	}
+    	else
+    	{
+    		return $this->abstract;
+    	}
+    }
 }

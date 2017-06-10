@@ -14,6 +14,14 @@ body {
   font-size: 14px;
 }
 
+a, 
+a:hover,
+a:focus,
+a:visited, {
+  color: inherit;
+  text-decoration: none;
+}
+
 .logo {
   width: 100%;
   height: 100%;
@@ -61,11 +69,6 @@ body {
   text-transform: uppercase;
 }
 
-.article__author::before {
-  content: 'By ';
-  text-transform: capitalize;
-}
-
 .article__body {
   margin-top: 15px;
 }
@@ -94,6 +97,10 @@ body {
   padding: 5px 0;
   margin-top: 40px;
   font-size: 10px;
+}
+
+.footer a {
+  color: #0275d8;
 }
 
 .powered-by > * {
