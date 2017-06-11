@@ -43,6 +43,10 @@ a:visited, {
 	text-align: justify;
 }
 
+.fourth-column .article:last-child {
+  box-shadow: none;
+}
+
 .article__image {
   margin-bottom: 10px;
 }
@@ -155,6 +159,10 @@ a:visited, {
 	.border-right-md {
 		border-right: 1px solid $gray-black;
 	}
+
+  .no-separator-md {
+    box-shadow: none;
+  }
 }
 
 @include media-breakpoint-down(xs) {

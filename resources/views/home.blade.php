@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-md-6 d-flex flex-column justify-content-between border-right-md first-column">
 				@foreach ($columns[0] as $article)
-					<div class="article @if(!$loop->last) full-width-separator @endif">
+					<div class="article @if($loop->last) no-separator-md @endif full-width-separator">
 						<div class="article__headline separator">
 							<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
 						</div>
@@ -64,7 +64,7 @@
 			</div>
 			<div class="col-md-6 d-flex flex-column justify-content-between second-column">
 				@foreach ($columns[3] as $article)
-					<div class="article @if(!$loop->last) full-width-separator @endif">
+					<div class="article @if($loop->last) no-separator-md @endif full-width-separator">
 						<div class="article__headline separator">
 							<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
 						</div>
@@ -79,7 +79,7 @@
 	</div> <!-- .left-section -->
 	<div class="col-md-3 col-sm-5 d-flex flex-column justify-content-between border-right-md third-column">
 		@foreach ($columns[2] as $article)
-			<div class="article @if(!$loop->last) full-width-separator @endif">
+			<div class="article @if($loop->last) no-separator-md @endif full-width-separator">
 				<div class="article__headline separator">
 					<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
 				</div>
@@ -92,7 +92,7 @@
 	</div>
 	<div class="col-md-3 d-flex flex-column justify-content-between fourth-column">
 		@foreach ($columns[1] as $article)
-			<div class="article @if(!$loop->last) full-width-separator @endif">
+			<div class="article @if($loop->last) no-separator-md @endif full-width-separator">
 				<div class="article__headline separator">
 					<a href="{{ $article->url }}" target="_blank"><h2>@trim_dot($article->headline)</h2></a>
 				</div>
