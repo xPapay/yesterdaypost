@@ -183,6 +183,12 @@ a:visited, {
   }
 }
 
+@include media-breakpoint-up(lg) {
+  .article--main .article__headline h2 {
+    font-size: 3.5rem;
+  }
+}
+
 @include media-breakpoint-only(md) {
   .article__headline h2 {
     font-size: 1.3rem;
