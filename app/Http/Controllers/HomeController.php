@@ -10,11 +10,12 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-    	$date = Carbon::today()->subYears(152);
+    	$date = Carbon::today()->subYears(112);
 
     	$articles = Article::whereDate('pub_date', $date)
     						->whereRaw('LENGTH(`headline`) < 120')
-    						->where('headline', 'NOT LIKE', '%;%')
+                            ->where('headline', 'NOT LIKE', '%;%')
+    						->where('headline', 'NOT LIKE', '%-- no title%')
     						->where('published', 1)
     						->where(function ($query) {
     							$query->whereNotNull('lead_paragraph')
