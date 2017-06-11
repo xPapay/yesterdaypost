@@ -17,4 +17,8 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect non-www to www version
+    RewriteCond %{HTTP_HOST} ^yesterdaypost.com$ [NC]
+    RewriteRule (.*) http://www.yesterdaypost.com/$1 [R=301,L]
 </IfModule>
