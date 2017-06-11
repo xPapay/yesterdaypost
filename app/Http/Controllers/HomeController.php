@@ -11,10 +11,11 @@ class HomeController extends Controller
     public function today()
     {
     	$date = Carbon::today()->subYears(84);
+        $canonicalLink = $date->format('Y/m/d');
     	$articles = Article::fromDate($date)->get();
     	$columns = $articles->columnize(4);
     	$mainArticle = $columns[0]->shift();
-    	return view('home', compact('date', 'columns', 'mainArticle'));
+    	return view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink'));
     }
 
     public function date($year, $month, $day)
