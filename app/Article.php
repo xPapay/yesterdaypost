@@ -38,4 +38,19 @@ class Article extends Model
     		return $this->abstract;
     	}
     }
+
+    public function scopeFromDate($query, $date)
+    {
+        return $query->whereDate('pub_date', $date)
+                        ->whereRaw('LENGTH(`headline`) < 120')
+                        ->where('headline', 'NOT LIKE', '%;%')
+                        ->where('headline', 'NOT LIKE', '%-- no title%')
+                        ->where('published', 1)
+                        ->where(function ($query) {
+                            $query->whereNotNull('lead_paragraph')
+                                    ->orWhereNotNull('snippet')
+                                    ->orWhereNotNull('abstract');
+                        })
+                        ->orderBy('print_page');
+    }
 }
