@@ -15,8 +15,9 @@ class HomeController extends Controller
      */
     public function today()
     {
-        $cacheExpiry = $this->getCacheExpiryDate();
-        $date = Carbon::today()->subYears(84);
+        $today = Carbon::today();
+        $cacheExpiryDate = $this->getCacheExpiryDate($today);
+        $date = $today->subYears(84);
         $canonicalLink = $date->format('Y/m/d');
     	$articles = Article::fromDate($date)->get();
     	$columns = $articles->columnize(4);
@@ -25,7 +26,7 @@ class HomeController extends Controller
         $tomorrowUrl = $this->getTomorrowURL($date);
     	return response()
                 ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink', 'yesterdayUrl', 'tomorrowUrl'))
-                ->header('Expires', $cacheExpiry);
+                ->header('Expires', $cacheExpiryDate);
     }
 
     /**
@@ -63,9 +64,10 @@ class HomeController extends Controller
         }
     }
 
-    private function getCacheExpiryDate()
+    private function getCacheExpiryDate(Carbon $date)
     {
-        return Carbon::tomorrow()->format('D, d M Y H:i:s e');
+        $date = clone $date;
+        return $date->addDay()->format('D, d M Y H:i:s e');
     }
 
     private function getTomorrowURL(Carbon $currentDate)
