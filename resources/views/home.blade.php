@@ -34,12 +34,14 @@
 		<div class="row height-100">
 			<div class="col-sm-12">
 				<div class="article article--main full-width-separator">
-					<div class="article__image text-center">
-						<figure class="figure">
-							<img src="http://via.placeholder.com/700x400" class="figure-img img-fluid bw-filter" alt="A generic square placeholder image with rounded corners in a figure.">
-							<figcaption class="figure-caption text-left">A caption for the above image.</figcaption>
-						</figure>
-					</div>
+					@if (($mutlimedia = $mainArticle->multimedia)->count() > 0)
+						<div class="article__image text-center">
+							<figure class="figure">
+								<img src="{{ $multimedia[0]->url }}" class="figure-img img-fluid bw-filter" alt="Main image of today's newspaper">
+								<figcaption class="figure-caption text-left">{{ $mainArticle->headline }}</figcaption>
+							</figure>
+						</div>
+					@endif
 					<div class="article__headline separator">
 						<a href="{{ $mainArticle->url }}" target="_blank"><h2>@trim_dot($mainArticle->headline)</h2></a>
 					</div>

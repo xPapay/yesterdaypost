@@ -41,7 +41,10 @@ class Article extends Model
 
     public function scopeFromDate($query, $date)
     {
-        return $query->whereDate('pub_date', $date)
+        return $query->with(['multimedia' => function ($query) {
+                                $query->where('type', 'image');
+                            }])
+                        ->whereDate('pub_date', $date)
                         ->whereRaw('LENGTH(`headline`) < 120')
                         ->where('headline', 'NOT LIKE', '%;%')
                         ->where('headline', 'NOT LIKE', '%-- no title%')
