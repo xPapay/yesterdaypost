@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         $today = Carbon::today();
         $cacheExpiryDate = $this->getCacheExpiryDate($today);
-        $date = $today->subYears(84);
+        $date = $today->subYears(56);
         $canonicalLink = $date->format('Y/m/d');
     	$articles = Article::fromDate($date)->get();
     	$columns = $articles->columnize(4);
@@ -57,7 +57,7 @@ class HomeController extends Controller
      */
     private function restrictFutureArticles(Carbon $demandedDate)
     {
-        $today = Carbon::today()->subYears(84);
+        $today = Carbon::today()->subYears(56);
         if ($today->lt($demandedDate))
         {
             abort(404);
@@ -73,7 +73,7 @@ class HomeController extends Controller
     private function getTomorrowURL(Carbon $currentDate)
     {
         $currentDate = clone $currentDate;
-        $today = Carbon::today()->subYears(84);
+        $today = Carbon::today()->subYears(56);
         if ($currentDate->gte($today))
         {
             return false;
