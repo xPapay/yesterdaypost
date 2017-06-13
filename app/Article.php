@@ -2,8 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\ArticleCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Article extends Model
 {
@@ -55,5 +56,17 @@ class Article extends Model
                                     ->orWhereNotNull('abstract');
                         })
                         ->orderBy('print_page');
+    }
+
+    /**
+     * Check if exist at least one record for given date
+     * 
+     * @param  \Carbon\Carbon $date
+     * @return bool
+     */
+    public static function exists($date)
+    {
+        $article = DB::table('articles')->select('id')->whereDate('pub_date', $date)->limit(1)->first();
+        return $article != null;
     }
 }

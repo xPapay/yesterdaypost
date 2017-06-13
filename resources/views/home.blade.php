@@ -106,5 +106,15 @@
 		@endforeach
 	</div>
 </div>
+<div class="row pagination">
+	<div class="col-sm-4 offset-sm-4">
+		@if($yesterdayUrl)
+			<a class="float-left padding-10 italic" href="{{ $yesterdayUrl }}">&laquo;Yesterday</a>
+		@endif
+		@if($tomorrowUrl)
+			<a class="float-right padding-10 italic" href="{{ $tomorrowUrl }}">Tomorrow&raquo;</a>
+		@endif
+	</div>
+</div>
 
 @endsection

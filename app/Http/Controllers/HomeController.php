@@ -16,13 +16,15 @@ class HomeController extends Controller
     public function today()
     {
         $cacheExpiry = $this->getCacheExpiryDate();
-    	$date = Carbon::today()->subYears(84);
+        $date = Carbon::today()->subYears(84);
         $canonicalLink = $date->format('Y/m/d');
     	$articles = Article::fromDate($date)->get();
     	$columns = $articles->columnize(4);
     	$mainArticle = $columns[0]->shift();
+        $yesterdayUrl = $this->getYesterdayURL($date);
+        $tomorrowUrl = $this->getTomorrowURL($date);
     	return response()
-                ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink'))
+                ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink', 'yesterdayUrl', 'tomorrowUrl'))
                 ->header('Expires', $cacheExpiry);
     }
 
@@ -41,7 +43,9 @@ class HomeController extends Controller
         $articles = Article::fromDate($date)->get();
         $columns = $articles->columnize(4);
         $mainArticle = $columns[0]->shift();
-        return view('home', compact('date', 'columns', 'mainArticle'));
+        $yesterdayUrl = $this->getYesterdayURL($date);
+        $tomorrowUrl = $this->getTomorrowURL($date);
+        return view('home', compact('date', 'columns', 'mainArticle', 'yesterdayUrl', 'tomorrowUrl'));
     }
 
     /**
@@ -62,5 +66,39 @@ class HomeController extends Controller
     private function getCacheExpiryDate()
     {
         return Carbon::tomorrow()->format('D, d M Y H:i:s e');
+    }
+
+    private function getTomorrowURL(Carbon $currentDate)
+    {
+        $currentDate = clone $currentDate;
+        $today = Carbon::today()->subYears(84);
+        if ($currentDate->gte($today))
+        {
+            return false;
+        }
+
+        $tomorrow = $currentDate->addDay();
+
+        return route('date', [
+            'year' => $tomorrow->year, 
+            'month' => $tomorrow->format('m'),
+            'day' => $tomorrow->format('d')
+        ]);
+    }
+
+    private function getYesterdayURL(Carbon $currentDate)
+    {
+        $currentDate = clone $currentDate;
+        $yesterday = $currentDate->subDay();
+        if (! Article::exists($yesterday))
+        {
+            return false;
+        }
+
+        return route('date', [
+            'year' => $yesterday->year,
+            'month' => $yesterday->format('m'),
+            'day' => $yesterday->format('d')
+        ]);
     }
 }
