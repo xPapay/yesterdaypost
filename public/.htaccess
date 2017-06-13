@@ -21,4 +21,9 @@
     # Redirect non-www to www version
     RewriteCond %{HTTP_HOST} ^yesterdaypost.com$ [NC]
     RewriteRule (.*) http://www.yesterdaypost.com/$1 [R=301,L]
+
+    # Handle Caching
+    <filesMatch ".(css|jpg|jpeg|png|gif|js|ico|svg)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
 </IfModule>
