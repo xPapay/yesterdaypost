@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <link rel="shortcut icon" href="/favicon.ico" />
 	<meta name="robots" content="noindex, nofollow">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
