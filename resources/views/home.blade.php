@@ -4,7 +4,7 @@
 
 <div class="row head">
 	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
-		<div class="forecast">
+		<div class="box forecast">
 			Weatherforcast for the next 24 hours: Plenty of Sunshine
 			Wind: 7km/h SSE; Ther: 21°C; Hum: 82%
 		</div>
@@ -15,8 +15,8 @@
 		</div>
 	</div>
 	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
-		<div class="advertisement">
-			A super awesome vintage advertisement
+		<div class="box advertisement">
+			Daily news from the past days
 		</div>
 	</div>
 </div> <!-- .row .head -->

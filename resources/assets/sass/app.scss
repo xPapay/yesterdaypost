@@ -36,8 +36,8 @@ p {
   height: 100%;
 }
 
-.forecast,
-.advertisement {
+.box {
+  min-height: 55px;
   font-size: 12px;
   border: 1px solid $gray-black;
   padding: 8px;
