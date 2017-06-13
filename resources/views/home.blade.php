@@ -45,7 +45,7 @@
 					</div>
 					<div class="article__author">{{ $mainArticle->authors }}</div>
 					<div class="article__perex lead text-center">
-						{{ $mainArticle->perex }}
+						<p>{{ $mainArticle->perex }}</p>
 					</div>
 				</div> <!-- .article -->
 			</div>
@@ -57,7 +57,7 @@
 						</div>
 						<div class="article__author">{{ $article->authors }}</div>
 						<div class="article__body columnize">
-							{{ $article->perex }}
+							<p>{{ $article->perex }}</p>
 						</div>
 					</div> <!-- .article -->
 				@endforeach
@@ -70,7 +70,7 @@
 						</div>
 						<div class="article__author">{{ $article->authors }}</div>
 						<div class="article__body columnize">
-							{{ $article->perex }}
+							<p>{{ $article->perex }}</p>
 						</div>
 					</div> <!-- .article -->
 				@endforeach
@@ -85,7 +85,7 @@
 				</div>
 				<div class="article__author">{{ $article->authors }}</div>
 				<div class="article__body columnize">
-					{{ $article->perex }}
+					<p>{{ $article->perex }}</p>
 				</div>
 			</div> <!-- .article -->
 		@endforeach
@@ -98,7 +98,7 @@
 				</div>
 				<div class="article__author">{{ $article->authors }}</div>
 				<div class="article__body columnize">
-					{{ $article->perex }}
+					<p>{{ $article->perex }}</p>
 				</div>
 			</div> <!-- .article -->
 		@endforeach
