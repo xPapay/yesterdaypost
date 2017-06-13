@@ -11,7 +11,7 @@
     <link rel="canonical" href="{{ url($canonicalLink) }}" />
     @endif
 
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }} - Old News, Historical Events</title>
 
 </head>
 <body>
