@@ -20,7 +20,9 @@ class HomeController extends Controller
     	$articles = Article::fromDate($date)->get();
     	$columns = $articles->columnize(4);
     	$mainArticle = $columns[0]->shift();
-    	return view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink'));
+    	return response()
+                ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink'))
+                ->header('Expires', $this->getCacheExpiryDate());
     }
 
     /**
@@ -54,5 +56,10 @@ class HomeController extends Controller
         {
             abort(404);
         }
+    }
+
+    private function getCacheExpiryDate()
+    {
+        return Carbon::tomorrow()->format('D, d M Y H:i:s e');
     }
 }
