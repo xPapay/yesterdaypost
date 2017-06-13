@@ -15,6 +15,7 @@ class HomeController extends Controller
      */
     public function today()
     {
+        $cacheExpiry = $this->getCacheExpiryDate();
     	$date = Carbon::today()->subYears(84);
         $canonicalLink = $date->format('Y/m/d');
     	$articles = Article::fromDate($date)->get();
@@ -22,7 +23,7 @@ class HomeController extends Controller
     	$mainArticle = $columns[0]->shift();
     	return response()
                 ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink'))
-                ->header('Expires', $this->getCacheExpiryDate());
+                ->header('Expires', $cacheExpiry);
     }
 
     /**
