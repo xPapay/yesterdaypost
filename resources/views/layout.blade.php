@@ -12,7 +12,7 @@
     @endif
 
     <title>{{ config('app.name') }} - Old News, Historical Events</title>
-
+    @include('partials.analytics')
 </head>
 <body>
 
