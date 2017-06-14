@@ -10,7 +10,18 @@
     <link rel="canonical" href="{{ url($canonicalLink) }}" />
     @endif
 
-    <title>{{ config('app.name') }} - Old News, Historical Events</title>
+    @if(isset($metaTitle))
+    <title>{{ $metaTitle }} - {{ config('app.name') }}</title>
+    @else
+    <title>{{ config('app.name') }} - Old News, Historical Events, Vintage Newspaper</title>
+    @endif
+
+    @if(isset($metaDescription))
+    <meta name="description" content="{{ $metaDescription }}">
+    @else
+    <meta name="description" content="The Yesterday Post - Find old news, historical events put in context as if they occur just today.">
+    @endif
+
     @include('partials.analytics')
 </head>
 <body>
