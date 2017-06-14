@@ -24,8 +24,9 @@ class HomeController extends Controller
     	$mainArticle = $columns[0]->shift();
         $yesterdayUrl = $this->getYesterdayURL($date);
         $tomorrowUrl = $this->getTomorrowURL($date);
+        $metaTitle = $mainArticle->headline;
     	return response()
-                ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink', 'yesterdayUrl', 'tomorrowUrl'))
+                ->view('home', compact('date', 'columns', 'mainArticle', 'canonicalLink', 'yesterdayUrl', 'tomorrowUrl', 'metaTitle'))
                 ->header('Expires', $cacheExpiryDate);
     }
 
@@ -46,7 +47,8 @@ class HomeController extends Controller
         $mainArticle = $columns[0]->shift();
         $yesterdayUrl = $this->getYesterdayURL($date);
         $tomorrowUrl = $this->getTomorrowURL($date);
-        return view('home', compact('date', 'columns', 'mainArticle', 'yesterdayUrl', 'tomorrowUrl'));
+        $metaTitle = $mainArticle->headline;
+        return view('home', compact('date', 'columns', 'mainArticle', 'yesterdayUrl', 'tomorrowUrl', 'metaTitle'));
     }
 
     /**
