@@ -69,7 +69,7 @@ class HomeController extends Controller
     private function getCacheExpiryDate(Carbon $date)
     {
         $date = clone $date;
-        return $date->addDay()->format('D, d M Y H:i:s e');
+        return $date->addDay()->setTimezone('GMT')->format('D, d M Y H:i:s e');
     }
 
     private function getTomorrowURL(Carbon $currentDate)
