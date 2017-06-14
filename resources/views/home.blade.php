@@ -11,7 +11,9 @@
 	</div>
 	<div class="col-md-8 col-sm-12 d-flex justify-content-center align-items-end">
 		<div class="logo">
-			@include('partials.logo')
+			<a href="/">
+				@include('partials.logo')
+			</a>
 		</div>
 	</div>
 	<div class="col-sm-2 hidden-sm-down d-flex align-items-end text-center">
