@@ -51,9 +51,9 @@ class Article extends Model
                         ->where('headline', 'NOT LIKE', '%-- no title%')
                         ->where('published', 1)
                         ->where(function ($query) {
-                            $query->whereNotNull('lead_paragraph')
-                                    ->orWhereNotNull('snippet')
-                                    ->orWhereNotNull('abstract');
+                            $query->whereNotNull('lead_paragraph')->whereRaw('LENGTH(`lead_paragraph`) > 26')
+                                    ->orWhereNotNull('snippet')->whereRaw('LENGTH(`snippet`) > 26')
+                                    ->orWhereNotNull('abstract')->whereRaw('LENGTH(`abstract`) > 26');
                         })
                         ->orderBy('print_page');
     }
