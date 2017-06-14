@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @if(isset($canonicalLink))
     <link rel="canonical" href="{{ url($canonicalLink) }}" />
+    @else
+    <link rel="canonical" href="{{ url()->current() }}" />
     @endif
 
     @if(isset($metaTitle))
