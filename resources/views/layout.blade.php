@@ -19,7 +19,7 @@
     @if(isset($metaDescription))
     <meta name="description" content="{{ $metaDescription }}">
     @else
-    <meta name="description" content="The Yesterday Post - Find old news, historical events put in context as if they occur just today.">
+    <meta name="description" content="The Yesterday Post - Find old news, historical events in context as if they occur just today.">
     @endif
 
     @include('partials.analytics')
